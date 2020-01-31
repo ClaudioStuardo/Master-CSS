@@ -1,0 +1,256 @@
+* {
+    /* PARA QUE FUNCIONE FLEXBOX EL CONTENIDO TIENE QUE ESTAR DENTRO DE UN DIV */
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif, Helvetica, Arial;
+}
+
+#container {
+    width: 90%;
+    height: auto;
+    margin: 0px auto;
+    border: 1px solid rgba(225, 225, 226, 0.8);
+    box-shadow: 0px 0px 10px #ccc;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 600px;
+}
+
+#header {
+    /* Funciona como el float pero solo lo que está dentro del header */
+    display: flex;
+    /* Los elementos se comportan como una fila */
+    flex-direction: row;
+    /* Los elementos que se salen de la caja se van hacia abajo */
+    flex-wrap: wrap;
+    /* Centra los elementos verticalmente */
+    align-items: center;
+    /* Se le pone una altura para centrarlos verticalmente */
+    height: 120px;
+    border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+.logo {
+    /* Para que la caja funcione en responsive */
+    flex-grow: 1;
+    /* Tamaño con flexbox (ancho) */
+    flex-basis: 65%;
+    padding: 10px;
+    margin-left: 20px;
+    color: black;
+    text-shadow: 1px 1px 0px #ccc;
+    text-transform: uppercase;
+    font-family: Helvetica;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+.logo h1 {
+    font-family: Helvetica;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+}
+
+#header #menu {
+    flex-grow: 1;
+    flex-basis: 30%;
+    height: 100%;
+    padding-right: 20px;
+}
+
+#header #menu>ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    /* Los elementos estén pegados al inicio y al final del espacio pero con espacio entre ellos */
+    justify-content: space-between;
+    /* Funciona como el de arriba pero le da espacios al inicio y final también */
+    /* justify-content: space-around; */
+    height: 100%;
+    list-style: none;
+}
+
+#header #menu ul li a {
+    text-transform: uppercase;
+    color: #444;
+    padding: 15px;
+    /* Sirve para darle animación al hover */
+    transition: all 300ms;
+}
+
+#header #menu ul li a:hover {
+    background-color: #ccc;
+    color: white;
+}
+
+#container #content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#container #content #projects {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    flex-basis: 80%;
+}
+
+#container #content #projects .project {
+    flex-grow: 1;
+    flex-basis: 250px;
+    margin-bottom: 25px;
+    margin-right: 20px;
+    border: 1px solid #ccc;
+}
+
+#container #content #projects .project img {
+    width: 100%;
+}
+
+#container #content #projects .project .project-info {
+    padding: 10px;
+}
+
+#container #content #projects .project .project-info a {
+    font-size: 16px;
+    color: black;
+    transition: all 300ms;
+}
+
+#container #content #projects .project .project-info a:hover {
+    color: green;
+}
+
+#container #content #projects .project .project-info p {
+    font-size: 16px;
+    color: gray;
+}
+
+#container #content #aside {
+    flex-basis: 15%;
+    margin-right: 30px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#container #content #aside h2 {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 100;
+    color: #444;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(225, 225, 226, 0.8);
+    text-align: center;
+}
+
+#container #content #aside ul {
+    list-style: none;
+}
+
+#container #content #aside ul li {
+    padding-bottom: 20px;
+}
+
+#container #content #aside ul li a {
+    display: block;
+    padding: 20px;
+    background-color: #eee;
+    color: #444;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 300ms;
+}
+
+#container #content #aside ul li a:hover {
+    background-color: #444;
+    color: #eee;
+}
+
+#container #footer {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: end;
+    height: 120px;
+    align-items: center;
+    border-top: 1px solid rgba(225, 225, 226, 0.8);
+}
+
+#container #footer .logo {
+    opacity: 0.5;
+    flex-basis: auto;
+    flex-grow: 1;
+    order: 2;
+    text-align: right;
+    margin-right: 20px;
+}
+
+#container #footer .info {
+    flex-grow: 1;
+    order: 1;
+    margin-left: 20px;
+    color: #444;
+}
+
+@media (max-width: 1333px) {
+    #header {
+        text-align: center;
+    }
+    #header #menu>ul {
+        margin-top: 20px;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 646px) {
+    #container #content {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    #container #content #aside {
+        margin-right: 0px;
+    }
+    #container #content #aside ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    #container #content #aside ul li {
+        flex-grow: 1;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #container #content #projects {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    #container #footer .logo {
+        flex-grow: 1;
+        order: 1;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
+    #container #footer .info {
+        flex-grow: 1;
+        order: 2;
+        margin-left: 20px;
+        flex-basis: 100%;
+        text-align: center;
+        margin: 0px;
+    }
+}
