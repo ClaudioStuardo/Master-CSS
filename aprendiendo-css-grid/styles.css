@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.layout {
+    width: 80%;
+    margin: 0px auto;
+    min-height: 400px;
+    /* Definir el grid layout */
+    display: grid;
+    /* Espacios entre elementos grid */
+    grid-gap: 10px;
+    /* Se definen las columnas diviendo el espacio */
+    /* Para que no se salgan del contenedor se le restan los margenes puestos anteriormente */
+    /* grid-template-columns: calc(50% - 10px) calc(50% - 10px); */
+    /* grid-template-columns: repeat(2, calc(25% - 10px)) 15% 35%; */
+    /* Se utiliza el fr para indicar la cantidad de filas en este caso son 4 columnas */
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Se definen las filas con su altura */
+    grid-template-rows: 1fr 2fr 1fr;
+    padding: 10px;
+    border: 3px solid orangered;
+}
+
+.layout .caja {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    border: 4px solid #222;
+    background-color: gray;
+}
+
+.layout .red {
+    /* Para expandir cajas se indica el inicio de la columna hasta la columna que se quiera expandir */
+    /* Se cuentan los espacios intermedios */
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* Abreviación */
+    grid-column: 1 / 4;
+    background-color: red;
+}
+
+.layout .green {
+    /* Expandir las cajas en la altura */
+    grid-row: 2 / 5;
+    background-color: green;
+}
+
+.layout .blue {
+    grid-column: 2 / 4;
+    background-color: blue;
+}
+
+.layout .pink {
+    background-color: palevioletred;
+}
+
+.layout .orange {
+    background-color: orange;
+}
+
+.layout .ligthblue {
+    grid-column: 2 / 3;
+    background-color: ligthblue;
+}
+
+.layout .yellowgreen {
+    grid-column: 3 / 4;
+    background-color: yellowgreen;
+}
+
+.layout .black {
+    grid-column: 1 / 4;
+    background-color: black;
+}
